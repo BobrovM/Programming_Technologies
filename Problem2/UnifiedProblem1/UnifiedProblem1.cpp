@@ -1,7 +1,4 @@
-﻿// UnifiedProblem1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include <iostream>
+﻿#include <iostream>
 //Для русского языка
 #include <fstream>
 #include "UnifiedProblem1.h"
@@ -36,7 +33,7 @@ void main()
         if (Index == 0) break;
 
         SwtchFunction(Index);
-
+        
         Index = -1;
     }
 }
@@ -100,7 +97,7 @@ void CalculationOf13DegreeNumber()
     X *= XForLoop;
     X *= XInput;
 
-    cout << endl << "Ответ: x в 13 степени равен " << X << endl;;
+    cout << endl << "Ответ: x в 13 степени равен " << X << endl;
 }
 
 //Циклы 2
@@ -111,14 +108,14 @@ void ReturnLastDigitOfTheNumber()
     cout << endl << "Ввожу натуральное число из файла..." << endl;
     int Input;
 
-    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\2.txt");
+    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\1.txt");
     if (!file || file.eof())
     {
-        cout << endl << "Файл (2.txt) не найден или поврежден!" << endl;
+        cout << endl << "Файл (1.txt) не найден или поврежден!" << endl;
         return;
     }
 
-    file >> Input;
+    for(int Index = 0; Index < 2; Index++) file >> Input;
 
     cout << endl << "Натуральное число из файла равно " << Input << endl;
     cout << endl << "Вычисляю..." << endl;
@@ -137,19 +134,20 @@ void SumOf2To20()
 
     cout << endl << "Ввожу границы из файла..." << endl;
 
-    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\3.txt");
+    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\1.txt");
     if (!file || file.eof())
     {
-        cout << endl << "Файл (3.txt) не найден или поврежден!" << endl;
+        cout << endl << "Файл (1.txt) не найден или поврежден!" << endl;
         return;
     }
     
-    file >> Border1;
+    for (int Index = 0; Index < 3; Index++) file >> Border1;
     file >> Border2;
+
     if (Border2 < Border1) swap(Border1, Border2);
 
     cout << endl << "Вычисляю сумму четных чисел из границ от " << Border1 << " до " << Border2 << endl;
-    for (int Index = Border1 + (Border1 % 2); Index <= 20; Index += 2)
+    for (int Index = Border1 + (Border1 % 2); Index <= Border2; Index += 2)
     {
         Sum += Index;
     }
@@ -164,22 +162,21 @@ void FactN()
 {
     int Fact = 1, n;
     cout << endl << "Ввожу n из файла..." << endl;
-    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\4.txt");
+    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\1.txt");
     if (!file || file.eof())
     {
-        cout << endl << "Файл (4.txt) не найден или поврежден!" << endl;
+        cout << endl << "Файл (1.txt) не найден или поврежден!" << endl;
         return;
     }
 
-    file >> n;
-    cout << endl << "n из файла равен " << n << endl;
+    for (int Index = 0; Index < 5; Index++) file >> n;
 
+    cout << endl << "n из файла равен " << n << endl;
     cout << endl << "Вычисляю факториал..." << endl;
     for (int Index = 1; Index <= n; Index++)
     {
         Fact *= Index;
     }
-
 
     cout << endl << "Ответ: факториал равен " << Fact << endl;
 }
@@ -193,18 +190,17 @@ void TheSwap()
     int A, B;
     cout << endl << "Ввожу a и b из файла..." << endl;
 
-    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\5.txt");
+    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\1.txt");
     if (!file || file.eof())
     {
-        cout << endl << "Файл (5.txt) не найден или поврежден!" << endl;
+        cout << endl << "Файл (1.txt) не найден или поврежден!" << endl;
         return;
     }
 
-    file >> A;
+    for (int Index = 0; Index < 6; Index++) file >> A;
     file >> B;
 
     cout << endl << "Исходно a = " << A << ", b = " << B << "\n";
-
     cout << endl << "Меняю местами..." << endl;
     swap(A, B);
 
@@ -218,16 +214,16 @@ void Sum1To100()
     //TODO интерфейс для юзера
     int Sum = 0, Border;
     cout << endl << "Ввожу правую границу для суммы из файла..." << endl;
-    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\6.txt");
+    ifstream file("A:\\UniversityStuff\\3Semester\\TechProg\\Problem2\\UnifiedProblem1\\Debug\\1.txt");
     if (!file || file.eof())
     {
-        cout << endl << "Файл (6.txt) не найден или поврежден!" << endl;
+        cout << endl << "Файл (1.txt) не найден или поврежден!" << endl;
         return;
     }
 
-    file >> Border;
-    cout << endl << "Правая граница для суммы из файла равна " << Border << endl;
+    for (int Index = 0; Index < 8; Index++) file >> Border;
 
+    cout << endl << "Правая граница для суммы из файла равна " << Border << endl;
     cout << endl << "Суммирую..." << endl;
     for (int Index = 1; Index <= Border; Index++)
     {
@@ -236,14 +232,3 @@ void Sum1To100()
 
     cout << endl << "Ответ: сумма равна " << Sum << endl;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
